@@ -2,7 +2,9 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
-from utils.logger import logger
+from utils.logger import setup_logger
+
+logger = setup_logger()
 
 def train_knn(df: pd.DataFrame, target_col: str = "condition", n_neighbors: int = 5) -> KNeighborsClassifier:
     """

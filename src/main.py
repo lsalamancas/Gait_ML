@@ -1,9 +1,15 @@
 from core.read_data import read_data
-from core.preprocess import compute_ROM, compute_angular_velocity
+from core.preprocess import *
 from utils.logger import setup_logger
 from models.linear_regression import train_linear_regression
 from models.random_forest import train_random_forest
 from models.knn import train_knn
+from models.svm import train_svm, train_svm_by_joint
+from models.logistic_regression import train_multiclass_logreg, train_per_joint_classifier
+from models.kmeans import run_kmeans, run_kmeans_by_joint
+from models.MLP import train_mlp
+from utils.plot_data import *
+import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
 
@@ -26,13 +32,40 @@ def main():
     df = compute_angular_velocity(df)
     logger.info("Angular velocity added to DataFrame")
 
+    df = compute_summary_metrics(df)
+    logger.info("Metrics added to DataFrame")
     # 4. (Opcional) Save enriched DataFrame for inspection
     df.to_csv("resources/enriched_gait.csv", index=False)
     logger.info("Enriched DataFrame saved")
 
-    lr_model = train_linear_regression(df)
-    rf_model = train_random_forest(df)
-    knn_model = train_knn(df, target_col="condition_code", n_neighbors=5)
+    # lr_model = train_linear_regression(df)
+    # logreg_model = train_multiclass_logreg(df)
+    
+    df_feat = compute_bilateral_features(df)
+    df_feat = compute_leg_correlation(df_feat)
+    df_feat = build_cycle_features(df_feat)
+    logger.info(df_feat.head())
+
+
+    # print(df_feat.head())
+    # res_ankle = train_per_joint_classifier(df_feat, joint_id=3)  # tobillo
+    # res_knee  = train_per_joint_classifier(df_feat, joint_id=2)  # rodilla
+    # res_hip   = train_per_joint_classifier(df_feat, joint_id=1)  # cadera
+
+    # rf_model = train_random_forest(df_feat)
+    # knn_model = train_knn(df, target_col="condition", n_neighbors=5)
+    # kmeans_model, clusters = run_kmeans(df_feat, target_col="condition", n_clusters=3)
+    # svm_model = train_svm(df_feat, target_col="condition") 
+    # svm_model_joint = train_svm_by_joint(df_feat, target_col="condition") 
+    # results = run_kmeans_by_joint(df_feat)
+    MLP = train_mlp(df)
+    # plot_rom_vs_condition(df)
+    # plot_rom_vs_velocity(df)
+    # plot_kinematics_mean_std(df, graph="angle")
+    # plot_kinematics_mean_std(df, "angular_velocity")
+
+
+
 
 
 
