@@ -39,30 +39,31 @@ def main():
     logger.info("Enriched DataFrame saved")
 
     # lr_model = train_linear_regression(df)
-    # logreg_model = train_multiclass_logreg(df)
+    logreg_model = train_multiclass_logreg(df)
     
     df_feat = compute_bilateral_features(df)
     df_feat = compute_leg_correlation(df_feat)
     df_feat = build_cycle_features(df_feat)
+    df_feat.to_csv("resources/features_gait.csv", index=False)
+    logger.info("Enriched DataFrame saved")
     logger.info(df_feat.head())
 
 
-    # print(df_feat.head())
-    # res_ankle = train_per_joint_classifier(df_feat, joint_id=3)  # tobillo
-    # res_knee  = train_per_joint_classifier(df_feat, joint_id=2)  # rodilla
-    # res_hip   = train_per_joint_classifier(df_feat, joint_id=1)  # cadera
+    res_ankle = train_per_joint_classifier(df_feat, joint_id=3)  # tobillo
+    res_knee  = train_per_joint_classifier(df_feat, joint_id=2)  # rodilla
+    res_hip   = train_per_joint_classifier(df_feat, joint_id=1)  # cadera
 
-    # rf_model = train_random_forest(df_feat)
-    # knn_model = train_knn(df, target_col="condition", n_neighbors=5)
-    # kmeans_model, clusters = run_kmeans(df_feat, target_col="condition", n_clusters=3)
-    # svm_model = train_svm(df_feat, target_col="condition") 
-    # svm_model_joint = train_svm_by_joint(df_feat, target_col="condition") 
-    # results = run_kmeans_by_joint(df_feat)
+    rf_model = train_random_forest(df_feat)
+    knn_model = train_knn(df, target_col="condition", n_neighbors=5)
+    kmeans_model, clusters = run_kmeans(df_feat, target_col="condition", n_clusters=3)
+    svm_model = train_svm(df_feat, target_col="condition") 
+    svm_model_joint = train_svm_by_joint(df_feat, target_col="condition") 
+    results = run_kmeans_by_joint(df_feat)
     MLP = train_mlp(df)
     # plot_rom_vs_condition(df)
     # plot_rom_vs_velocity(df)
-    # plot_kinematics_mean_std(df, graph="angle")
-    # plot_kinematics_mean_std(df, "angular_velocity")
+    plot_kinematics_mean_std(df, graph="angle")
+    plot_kinematics_mean_std(df, "angular_velocity")
 
 
 

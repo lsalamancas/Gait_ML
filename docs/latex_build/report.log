@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.9)  2 NOV 2025 22:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.9)  26 NOV 2025 03:31
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/fer/master/ML/gait_ml_app/docs/latex_build/report.tex
-(/home/fer/master/ML/gait_ml_app/docs/latex_build/report.tex
+**/home/fer/master/ML/gait_ml_app/docs/report.tex
+(/home/fer/master/ML/gait_ml_app/docs/report.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
@@ -318,7 +317,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box56
-) (./report.aux)
+) (latex_build/report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -361,7 +360,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 20.
- (./report.out) (./report.out)
+ (latex_build/report.out) (latex_build/report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
@@ -405,7 +404,45 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 22
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-No file report.bbl.
+LaTeX Warning: Citation `bishop2006pattern' on page 1 undefined on input line 31.
+
+
+LaTeX Warning: Citation `murphy2012machine' on page 1 undefined on input line 31.
+
+
+LaTeX Warning: Citation `gait_asymmetry' on page 1 undefined on input line 33.
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 35--37
+[]\OT1/ptm/m/n/10 Neural net-works, par-tic-u-larly Multi-Layer Per-cep-trons
+ []
+
+
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 73--74
+ \OT1/ptm/m/it/10 1) Lo-gis-tic Re-gres-sion: [][][] \OT1/ptm/m/n/10 Mul-ti-class lo-gis-tic re-gres-sion
+ []
+
+
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}
+
+
+]
+Overfull \hbox (27.91672pt too wide) in paragraph at lines 136--149
+ [][] 
+ []
+
+
+
+
+
+[2]
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -419,30 +456,31 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}
-
-
-] (./report.aux)
+[3] (latex_build/report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 12B949ECE19EAEAC357113DDCCDEE909;618.
+(rerunfilecheck)             Checksum: F2BD7BF72E69F7AC4D867D7E30437302;2707.
  ) 
 Here is how much of TeX's memory you used:
- 10494 strings out of 475171
- 164345 string characters out of 5767095
- 583152 words of memory out of 5000000
- 33382 multiletter control sequences out of 15000+600000
- 590280 words of font info for 89 fonts, out of 8000000 for 9000
+ 10580 strings out of 475171
+ 165624 string characters out of 5767095
+ 588531 words of memory out of 5000000
+ 33424 multiletter control sequences out of 15000+600000
+ 594729 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,8n,79p,682b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (1 page, 96152 bytes).
+ 75i,18n,79p,890b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on latex_build/report.pdf (3 pages, 158560 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

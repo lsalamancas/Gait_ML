@@ -1,6 +1,6 @@
 {
   "latex-workshop.latex.autoBuild.run": "onSave",
-  "latex-workshop.latex.outDir": "docs/latex_build",
+  "latex-workshop.latex.outDir": "./latex_build",
   "latex-workshop.latex.recipe.default": "latexmk",
   "latex-workshop.latex.recipes": [
     {
@@ -13,11 +13,11 @@
       "name": "latexmk",
       "command": "latexmk",
       "args": [
-        "-pdf",
-        "-interaction=nonstopmode",
-        "-output-directory=docs/latex_build",
-        "%DOC%"
-      ]
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-output-directory=./latex_build",
+      "%DOC%"
+    ]
     }
   ]
 }
