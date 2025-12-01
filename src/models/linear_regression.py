@@ -20,7 +20,7 @@ def train_linear_regression(df: pd.DataFrame,
     logger.info("Preparing data for linear regression")
 
     # Features (mejor usar métricas agregadas en lugar de ángulo crudo)
-    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "max_velocity"]
+    feature_cols = ["ROM_diff", "angle_corr"]
     X = df[feature_cols]
     y = df[target_col]
 

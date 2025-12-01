@@ -1,12 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 from utils.logger import setup_logger
 
 logger = setup_logger()
+results_dir = Path("resources/results")
 
 def train_random_forest(df: pd.DataFrame, target_col: str = "condition") -> RandomForestClassifier:
     """
@@ -46,11 +48,13 @@ def train_random_forest(df: pd.DataFrame, target_col: str = "condition") -> Rand
     logger.info(importances)
     plt.figure(figsize=(8,6))
     sns.barplot(x=importances, y=feature_cols, palette="viridis")
-    plt.title("Importancia de features en Random Forest")
-    plt.xlabel("Importancia")
+    plt.title("Feature Importance in Random Forest")
+    plt.xlabel("Importance")
     plt.ylabel("Feature")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "importance_features_rf.png", dpi=300, bbox_inches="tight")
+    logger.info("random Forest matrix saved")
+    # plt.show()
 
     # --- Plot 2: Confusion matrix ---
     cm = confusion_matrix(y_test, y_pred, labels=sorted(df[target_col].unique()))
@@ -62,6 +66,8 @@ def train_random_forest(df: pd.DataFrame, target_col: str = "condition") -> Rand
     plt.xlabel("Predicho")
     plt.ylabel("Real")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "confusion_matrix_rf.png", dpi=300, bbox_inches="tight")
+    logger.info("random Forest matrix 2 saved")
+    # plt.show()
 
     return model

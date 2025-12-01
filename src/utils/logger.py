@@ -1,7 +1,7 @@
 import logging
 
 
-def setup_logger(name: str = "gait_app", log_file: str = "app.log") -> logging.Logger:
+def setup_logger(name: str = "gait_app", log_file: str = "results.log") -> logging.Logger:
     """
     Sets up a logger with both file and console handlers.
     Prevents duplicate handlers if called multiple times.

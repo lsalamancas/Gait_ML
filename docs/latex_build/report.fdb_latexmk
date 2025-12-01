@@ -1,6 +1,16 @@
 # Fdb version 4
-["pdflatex"] 1764145887.89239 "/home/fer/master/ML/gait_ml_app/docs/report.tex" "latex_build/report.pdf" "report" 1764145888.18742 0
-  "/home/fer/master/ML/gait_ml_app/docs/report.tex" 1764145887.48966 13998 34bddd24eda06dcb2308d543c7afea62 ""
+["pdflatex"] 1764556190.33431 "/home/fer/master/ML/gait_ml_app/docs/report.tex" "latex_build/report.pdf" "report" 1764556192.66452 0
+  "../resources/results/ROM_condition.png" 1764550522.47462 57736 60b031045835e4d371e15939eb7bd710 ""
+  "../resources/results/anglecorr_condition.png" 1764550884.44252 63356 b623a68050031acfa4aa9e51044abd34 ""
+  "../resources/results/confusion_matrix_MLP.png" 1764519197.7175 96263 0a4dad1b1c86afaaaf388a90cb7e419c ""
+  "../resources/results/confusion_matrix_rf.png" 1764554926.06545 66811 37be82a0a543e1cc8799f68b9108a7dd ""
+  "../resources/results/confusion_matrix_svm.png" 1764518757.68558 80192 96add5672ea3dbf63006c1ba1b4ba9ca ""
+  "../resources/results/importance_features_rf.png" 1764554925.93745 99559 f303952e429aab087e70d9e5f10ec0a2 ""
+  "../resources/results/kinematics_angle.png" 1764519721.46133 1426012 eea07f6daa6692bacfe0f9a9ee444694 ""
+  "../resources/results/kmeans_cf.png" 1764551347.79439 92498 5c72bc33cace249d396821192c428208 ""
+  "../resources/results/knn_cf.png" 1764518754.91358 64234 ae64a62d97d7bc3232ba6797ed413b38 ""
+  "../resources/results/svm_pca_2D.png" 1764518758.40558 1160367 d992e77162a3d50fac19357627726b9c ""
+  "/home/fer/master/ML/gait_ml_app/docs/report.tex" 1764556189.09312 21606 4b767d19031d2a753336b6efecad54ac ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1755987285 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1755987285 960 379cc0019370a9e0208a0a3f949f847a ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1755987285 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -95,9 +105,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1760064331 5306876 69c328245ae101f6bc10b01e1f2bf9d5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1760064322 2008243 46519386481ef35f18674cff9c113f0d ""
-  "latex_build/report.aux" 1764145888.14966 3939 293bdac8d86d0b02729fa1b3fd5e69e8 "pdflatex"
-  "latex_build/report.out" 1764145888.15366 2707 f2bd7bf72e69f7ac4d867d7e30437302 "pdflatex"
-  "report.tex" 1764145887.48966 13998 34bddd24eda06dcb2308d543c7afea62 ""
+  "latex_build/report.aux" 1764556192.62512 6400 3f7ce59ce7cefa2b8e15458786693ea4 "pdflatex"
+  "latex_build/report.out" 1764556192.62512 2802 85f0d36a7a137caa84017899a240dbeb "pdflatex"
+  "report.tex" 1764556189.09312 21606 4b767d19031d2a753336b6efecad54ac ""
   (generated)
   "latex_build/report.aux"
   "latex_build/report.log"

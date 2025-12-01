@@ -1,6 +1,13 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+from pathlib import Path
+from utils import setup_logger
+
+logger = setup_logger()
+
+
+results_dir = Path("resources/results")
 
 def plot_rom_vs_condition(df: pd.DataFrame, condition_col: str = "condition"):
     """
@@ -8,10 +15,12 @@ def plot_rom_vs_condition(df: pd.DataFrame, condition_col: str = "condition"):
     """
     plt.figure(figsize=(8,6))
     sns.boxplot(x=condition_col, y="ROM", data=df)
-    plt.title("Distribución de ROM por condición")
-    plt.xlabel("Condición")
+    plt.title("ROM distribution by condition")
+    plt.xlabel("Condition")
     plt.ylabel("ROM")
-    plt.show()
+    plt.savefig(results_dir / "ROM_condition.png", dpi=300, bbox_inches="tight")
+    logger.info("kinematics saved")
+    # plt.show()
 
 
 def plot_rom_vs_velocity(df: pd.DataFrame, condition_col: str = "condition"):
@@ -24,8 +33,22 @@ def plot_rom_vs_velocity(df: pd.DataFrame, condition_col: str = "condition"):
     plt.xlabel("Condition")
     plt.ylabel("ROM")
     plt.legend(title="Condición")
-    plt.show()
+    plt.savefig(results_dir / "ROM_velocity.png", dpi=300, bbox_inches="tight")
+    logger.info("Rom vs velocity saved")
+    # plt.show()
 
+def plot_anglecorr_vs_condition(df: pd.DataFrame): 
+    "Scatterplot of the angle correlation vs condition"
+
+    plt.figure(figsize=(8,6))
+    sns.boxplot(x="condition", y="angle_corr", data=df, showfliers=False)
+    plt.title("Angle correlation vs condition")
+    plt.xlabel("Condition")
+    plt.ylabel("Angle correlation")
+    # plt.legend(title="Condition")
+    plt.savefig(results_dir / "anglecorr_condition.png", dpi=300, bbox_inches="tight")
+    logger.info("angle corr vs condition saved")
+    # plt.show()
 
 def plot_kinematics_mean_std(df: pd.DataFrame, graph: str = "angle", condition_col: str = "condition"):
     """
@@ -74,5 +97,7 @@ def plot_kinematics_mean_std(df: pd.DataFrame, graph: str = "angle", condition_c
 
     plt.suptitle("Kinematics: mean ± std by joint, condition, and leg")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / f"kinematics_{graph}.png", dpi=300, bbox_inches="tight")
+    logger.info("kinematics saved")
+    # plt.show()
 

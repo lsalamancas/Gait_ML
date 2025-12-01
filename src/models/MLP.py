@@ -1,12 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path    
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from utils.logger import setup_logger
 
 logger = setup_logger()
+results_dir = Path("resources/results")
+
 
 def train_mlp(df: pd.DataFrame, target_col: str = "condition") -> MLPClassifier:
     """
@@ -73,6 +76,8 @@ def train_mlp(df: pd.DataFrame, target_col: str = "condition") -> MLPClassifier:
     plt.xlabel("Predicted")
     plt.ylabel("True")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "confusion_matrix_MLP.png", dpi=300, bbox_inches="tight")
+    logger.info("MLP matrix 2 saved")
+    # plt.show()
 
     return model

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.9)  26 NOV 2025 03:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.9)  30 NOV 2025 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,11 +381,11 @@ Package hyperref Info: Link coloring OFF on input line 20.
 * \textheight=686.56499pt
 * \oddsidemargin=-18.06749pt
 * \evensidemargin=-18.06749pt
-* \topmargin=-48.6351pt
+* \topmargin=-51.40948pt
 * \headheight=12.0pt
-* \headsep=18.56761pt
+* \headsep=21.342pt
 * \topskip=12.0pt
-* \footskip=40.5821pt
+* \footskip=25.80774pt
 * \marginparwidth=20.0pt
 * \marginparsep=10.0pt
 * \columnsep=12.0pt
@@ -403,29 +403,11 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 22
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-
-LaTeX Warning: Citation `bishop2006pattern' on page 1 undefined on input line 31.
-
-
-LaTeX Warning: Citation `murphy2012machine' on page 1 undefined on input line 31.
-
-
-LaTeX Warning: Citation `gait_asymmetry' on page 1 undefined on input line 33.
-
-
-Underfull \hbox (badness 1406) in paragraph at lines 35--37
+Underfull \hbox (badness 1406) in paragraph at lines 44--47
 []\OT1/ptm/m/n/10 Neural net-works, par-tic-u-larly Multi-Layer Per-cep-trons
  []
 
 
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 73--74
- \OT1/ptm/m/it/10 1) Lo-gis-tic Re-gres-sion: [][][] \OT1/ptm/m/n/10 Mul-ti-class lo-gis-tic re-gres-sion
- []
 
 
 
@@ -433,54 +415,112 @@ Underfull \hbox (badness 2173) in paragraph at lines 73--74
 
 
 ]
-Overfull \hbox (27.91672pt too wide) in paragraph at lines 136--149
- [][] 
+Underfull \hbox (badness 2173) in paragraph at lines 88--89
+ \OT1/ptm/m/it/10 1) Lo-gis-tic Re-gres-sion: [][][] \OT1/ptm/m/n/10 Mul-ti-class lo-gis-tic re-gres-sion
  []
 
 
 
+<../resources/results/kinematics_angle.png, id=111, 1293.633pt x 853.5087pt>
+File: ../resources/results/kinematics_angle.png Graphic file (type png)
+<use ../resources/results/kinematics_angle.png>
+Package pdftex.def Info: ../resources/results/kinematics_angle.png  used on input line 152.
+(pdftex.def)             Requested size: 246.94499pt x 162.92369pt.
+
+Overfull \hbox (17.25287pt too wide) in paragraph at lines 166--180
+ [][] 
+ []
 
 
-[2]
+Overfull \hbox (22.47722pt too wide) in paragraph at lines 188--201
+ [][] 
+ []
 
 
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
-
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
-
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[3] (latex_build/report.aux)
+[2 <../resources/results/kinematics_angle.png>]
+<../resources/results/knn_cf.png, id=151, 410.0118pt x 353.1594pt>
+File: ../resources/results/knn_cf.png Graphic file (type png)
+<use ../resources/results/knn_cf.png>
+Package pdftex.def Info: ../resources/results/knn_cf.png  used on input line 210.
+(pdftex.def)             Requested size: 172.86073pt x 148.89174pt.
+<../resources/results/kmeans_cf.png, id=152, 410.0118pt x 353.1594pt>
+File: ../resources/results/kmeans_cf.png Graphic file (type png)
+<use ../resources/results/kmeans_cf.png>
+Package pdftex.def Info: ../resources/results/kmeans_cf.png  used on input line 220.
+(pdftex.def)             Requested size: 172.86073pt x 148.89174pt.
+<../resources/results/confusion_matrix_rf.png, id=153, 410.0118pt x 353.1594pt>
+File: ../resources/results/confusion_matrix_rf.png Graphic file (type png)
+<use ../resources/results/confusion_matrix_rf.png>
+Package pdftex.def Info: ../resources/results/confusion_matrix_rf.png  used on input line 230.
+(pdftex.def)             Requested size: 172.86073pt x 148.89174pt.
+
+
+<../resources/results/importance_features_rf.png, id=154, 570.6921pt x 425.1885pt>
+File: ../resources/results/importance_features_rf.png Graphic file (type png)
+<use ../resources/results/importance_features_rf.png>
+Package pdftex.def Info: ../resources/results/importance_features_rf.png  used on input line 239.
+(pdftex.def)             Requested size: 172.86073pt x 128.78372pt.
+<../resources/results/confusion_matrix_svm.png, id=155, 410.0118pt x 353.1594pt>
+File: ../resources/results/confusion_matrix_svm.png Graphic file (type png)
+<use ../resources/results/confusion_matrix_svm.png>
+Package pdftex.def Info: ../resources/results/confusion_matrix_svm.png  used on input line 248.
+(pdftex.def)             Requested size: 172.86073pt x 148.89174pt.
+<../resources/results/confusion_matrix_MLP.png, id=156, 420.8523pt x 353.1594pt>
+File: ../resources/results/confusion_matrix_MLP.png Graphic file (type png)
+<use ../resources/results/confusion_matrix_MLP.png>
+Package pdftex.def Info: ../resources/results/confusion_matrix_MLP.png  used on input line 257.
+(pdftex.def)             Requested size: 172.86073pt x 145.05493pt.
+
+
+[3 <../resources/results/knn_cf.png> <../resources/results/kmeans_cf.png> <../resources/results/confusion_matrix_rf.png> <../resources/results/importance_features_rf.png> <../resources/results/confusion_matrix_svm.png>]
+<../resources/results/svm_pca_2D.png, id=177, 554.7927pt x 569.7285pt>
+File: ../resources/results/svm_pca_2D.png Graphic file (type png)
+<use ../resources/results/svm_pca_2D.png>
+Package pdftex.def Info: ../resources/results/svm_pca_2D.png  used on input line 273.
+(pdftex.def)             Requested size: 197.55673pt x 202.8766pt.
+<../resources/results/ROM_condition.png, id=178, 496.254pt x 394.5942pt>
+File: ../resources/results/ROM_condition.png Graphic file (type png)
+<use ../resources/results/ROM_condition.png>
+Package pdftex.def Info: ../resources/results/ROM_condition.png  used on input line 280.
+(pdftex.def)             Requested size: 197.55673pt x 157.08224pt.
+<../resources/results/anglecorr_condition.png, id=179, 507.8172pt x 394.5942pt>
+File: ../resources/results/anglecorr_condition.png Graphic file (type png)
+<use ../resources/results/anglecorr_condition.png>
+Package pdftex.def Info: ../resources/results/anglecorr_condition.png  used on input line 287.
+(pdftex.def)             Requested size: 197.55673pt x 153.50577pt.
+
+
+
+
+[4 <../resources/results/confusion_matrix_MLP.png> <../resources/results/svm_pca_2D.png> <../resources/results/ROM_condition.png> <../resources/results/anglecorr_condition.png>]
+
+
+
+[5] (latex_build/report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: F2BD7BF72E69F7AC4D867D7E30437302;2707.
+(rerunfilecheck)             Checksum: 85F0D36A7A137CAA84017899A240DBEB;2802.
  ) 
 Here is how much of TeX's memory you used:
- 10580 strings out of 475171
- 165624 string characters out of 5767095
- 588531 words of memory out of 5000000
- 33424 multiletter control sequences out of 15000+600000
- 594729 words of font info for 103 fonts, out of 8000000 for 9000
+ 10717 strings out of 475171
+ 170061 string characters out of 5767095
+ 590930 words of memory out of 5000000
+ 33533 multiletter control sequences out of 15000+600000
+ 597458 words of font info for 107 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,18n,79p,890b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,79p,335b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on latex_build/report.pdf (3 pages, 158560 bytes).
+Output written on latex_build/report.pdf (5 pages, 2886985 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

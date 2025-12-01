@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from pathlib import Path
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -10,6 +11,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from utils.logger import setup_logger
 
 logger = setup_logger()
+results_dir = Path("resources/results")
+
 
 def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
     """
@@ -21,11 +24,7 @@ def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
     logger.info("Preparing data for SVM")
 
     # --- Features and target ---
-    feature_cols = [
-    "ROM", "mean_angle", "std_angle",
-    "mean_velocity", "std_velocity", "max_velocity",
-    "ROM_diff", "angle_corr"
-    ]
+    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "std_velocity", "max_velocity", "ROM_diff", "angle_corr"]
     X = df[feature_cols]
     y = df[target_col]
 
@@ -76,7 +75,9 @@ def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
     plt.xlabel("Predicted")
     plt.ylabel("True")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "confusion_matrix_svm.png", dpi=300, bbox_inches="tight")
+    logger.info("svm conf matrix saved")
+    # plt.show()
 
     # --- PCA 2D visualization ---
     pca2 = PCA(n_components=2)
@@ -87,7 +88,10 @@ def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
     plt.ylabel("PC2")
     plt.title("PCA 2D of Aggregated Features")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "svm_pca_2D.png", dpi=300, bbox_inches="tight")
+    logger.info("svm PCA 2D saved")
+
+    # plt.show()
 
     # --- PCA 3D visualization ---
     pca3 = PCA(n_components=3)
@@ -106,7 +110,9 @@ def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
                        title="Condition", loc="upper right")
     ax.add_artist(legend)
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "svm_pca_2D.png", dpi=300, bbox_inches="tight")
+    logger.info("svm PCA 3D saved")
+    # plt.show()
 
     # --- Train/evaluate SVM on PCA features ---
     X_train, X_test, y_train, y_test = train_test_split(
@@ -146,7 +152,9 @@ def train_svm(df: pd.DataFrame, target_col: str = "condition") -> SVC:
     plt.xlabel("Predicted")
     plt.ylabel("True")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "confusion_matrix_svm_PCA.png", dpi=300, bbox_inches="tight")
+    logger.info("svm PCA saved")
+    # plt.show()
 
     return model
 
@@ -170,7 +178,7 @@ def train_svm_by_joint(df: pd.DataFrame, target_col: str = "condition") -> dict:
         Dictionary with trained models and metrics per joint.
     """
     results = {}
-    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "std_velocity", "max_velocity"]
+    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "std_velocity", "max_velocity", "ROM_diff", "angle_corr"]
 
     for joint_id in sorted(df["joint"].unique()):
         logger.info(f"=== Training SVM for joint {joint_id} ===")
@@ -221,7 +229,9 @@ def train_svm_by_joint(df: pd.DataFrame, target_col: str = "condition") -> dict:
         plt.xlabel("Predicted")
         plt.ylabel("True")
         plt.tight_layout()
-        plt.show()
+        plt.savefig(results_dir / f"svm_byjoint_cm{joint_id}.png", dpi=300, bbox_inches="tight")
+        logger.info("svm by joint saved")
+        # plt.show()
 
         # Save results
         results[joint_id] = {

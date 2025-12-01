@@ -135,7 +135,6 @@ def compute_bilateral_features(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-logger = setup_logger()
 
 def compute_leg_correlation(df: pd.DataFrame) -> pd.DataFrame:
     """

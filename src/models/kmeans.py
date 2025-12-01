@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, silhouette_score
@@ -8,6 +9,8 @@ from sklearn.decomposition import PCA
 from utils.logger import setup_logger
 
 logger = setup_logger()
+results_dir = Path("resources/results")
+
 
 def run_kmeans(df: pd.DataFrame, target_col: str = "condition", n_clusters: int = 3):
     """
@@ -15,7 +18,7 @@ def run_kmeans(df: pd.DataFrame, target_col: str = "condition", n_clusters: int 
     Scales features, fits KMeans, evaluates inertia and silhouette score,
     compares clusters vs true labels, and generates PCA visualizations.
     """
-    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "std_velocity", "max_velocity"]
+    feature_cols = ["angle_corr"]
     X = df[feature_cols].values
     y = df[target_col].values
 
@@ -41,18 +44,22 @@ def run_kmeans(df: pd.DataFrame, target_col: str = "condition", n_clusters: int 
     plt.xlabel("Cluster")
     plt.ylabel("Condition")
     plt.tight_layout()
-    plt.show()
+    plt.savefig(results_dir / "kmeans_cf.png", dpi=300, bbox_inches="tight")
+    logger.info("kmeans cf saved")
+    # plt.show()
 
     # --- PCA 2D visualization of clusters ---
-    pca = PCA(n_components=2)
-    X_pca = pca.fit_transform(X_scaled)
-    plt.figure(figsize=(8,6))
-    plt.scatter(X_pca[:,0], X_pca[:,1], c=clusters, cmap="Set1", alpha=0.7)
-    plt.xlabel("PC1")
-    plt.ylabel("PC2")
-    plt.title("KMeans Clusters (PCA 2D)")
-    plt.tight_layout()
-    plt.show()
+    # pca = PCA(n_components=2)
+    # X_pca = pca.fit_transform(X_scaled)
+    # plt.figure(figsize=(8,6))
+    # plt.scatter(X_pca[:,0], X_pca[:,1], c=clusters, cmap="Set1", alpha=0.7)
+    # plt.xlabel("PC1")
+    # plt.ylabel("PC2")
+    # plt.title("KMeans Clusters (PCA 2D)")
+    # plt.tight_layout()
+    # plt.savefig(results_dir / "kmeans_clusters.png", dpi=300, bbox_inches="tight")
+    # logger.info("kmeans clusters saved")
+    # plt.show()
 
     return kmeans, clusters
 
@@ -77,7 +84,7 @@ def run_kmeans_by_joint(df: pd.DataFrame, target_col: str = "condition", n_clust
         Dictionary with trained KMeans models and metrics per joint.
     """
     results = {}
-    feature_cols = ["ROM", "mean_angle", "std_angle", "mean_velocity", "std_velocity", "max_velocity"]
+    feature_cols = ["angle_corr"]
 
     for joint_id in sorted(df["joint"].unique()):
         logger.info(f"=== Running KMeans for joint {joint_id} ===")
@@ -104,23 +111,28 @@ def run_kmeans_by_joint(df: pd.DataFrame, target_col: str = "condition", n_clust
         # Confusion matrix (true labels vs clusters)
         cm = confusion_matrix(y, clusters)
         plt.figure(figsize=(6,5))
-        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
+        contingency = pd.crosstab(y, clusters)
+        sns.heatmap(contingency, annot=True, cmap="Blues")
+
+        # sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
         plt.title(f"Confusion Matrix: Condition vs Cluster (Joint {joint_id})")
         plt.xlabel("Cluster")
         plt.ylabel("Condition")
         plt.tight_layout()
+        plt.savefig(results_dir /f"kmeans_cf_byjoint{joint_id}.png", dpi=300, bbox_inches="tight")
+        logger.info("kmeans cf by joint saved")
         plt.show()
 
         # PCA 2D visualization of clusters
-        pca = PCA(n_components=2)
-        X_pca = pca.fit_transform(X_scaled)
-        plt.figure(figsize=(8,6))
-        plt.scatter(X_pca[:,0], X_pca[:,1], c=clusters, cmap="Set1", alpha=0.7)
-        plt.xlabel("PC1")
-        plt.ylabel("PC2")
-        plt.title(f"KMeans Clusters (PCA 2D - Joint {joint_id})")
-        plt.tight_layout()
-        plt.show()
+        # pca = PCA(n_components=2)
+        # X_pca = pca.fit_transform(X_scaled)
+        # plt.figure(figsize=(8,6))
+        # plt.scatter(X_pca[:,0], X_pca[:,1], c=clusters, cmap="Set1", alpha=0.7)
+        # plt.xlabel("PC1")
+        # plt.ylabel("PC2")
+        # plt.title(f"KMeans Clusters (PCA 2D - Joint {joint_id})")
+        # plt.tight_layout()
+        # plt.show()
 
         # Save results
         results[joint_id] = {
